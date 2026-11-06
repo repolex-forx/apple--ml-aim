@@ -1,1 +1,118 @@
-Initializing
+# Repolex Knowledge Graph of apple/ml-aim
+
+RDF knowledge graph data for [apple/ml-aim](https://github.com/apple/ml-aim), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download apple/ml-aim
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── a018ae3208ef3289cae9aa024947e0bb3b71d3ff
+│   │       └── chunk-001.nq.gz
+│   └── repolex
+│       └── a018ae3208ef3289cae9aa024947e0bb3b71d3ff
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 040bc1305fdcd3fc6bd5b02a72d2b2f7208b37c6.nq.gz
+│   ├── 0c9b8d533a082b49554dbd95252e1d3853aaa6b1.nq.gz
+│   ├── 0fdb80439f5bc4141ab771aa6b51ce2cb6ea8ae1.nq.gz
+│   ├── 10e81c8577e877d987192ccf3c596de2d4bf8b49.nq.gz
+│   ├── 16fa793df51595eec71110e4f2454e3322ee0ba4.nq.gz
+│   ├── 1864bd4bf51f550a076393df26e42f2fc802908e.nq.gz
+│   ├── 18c7a282ba2d6f2ec76bdee3438b440c7556a97c.nq.gz
+│   ├── 2254315eb48fcefa57da47f8111f4ced02f8f198.nq.gz
+│   ├── 25fc149f1d63c90ad8b02ea4fc9e542602f82cf8.nq.gz
+│   ├── 2dc53ca34ca78153451a0c01f67518ec2e81ac36.nq.gz
+│   ├── 2e32c88eb9ba2e35687c8371e75ce224c5619d4c.nq.gz
+│   ├── 2e7adbd1f27a68bfe99951dc22e5a7db1ee1f972.nq.gz
+│   ├── 30ddad13a3f906650a62ba5d74fef202eef6302f.nq.gz
+│   ├── 37e14135e620282563e22a379721b91b963f2157.nq.gz
+│   ├── 3b78995fa4a9cf8a876a6fc61c04c1b65ed556d4.nq.gz
+│   ├── 4441435ebd496354c340f2b2c6b7d1da659fa746.nq.gz
+│   ├── 4467531bcb9dedfea99dc8df341f38ae0193bd8a.nq.gz
+│   ├── 4e5f60de4446d3006388f50be24b470cf2d51d26.nq.gz
+│   ├── 5a3e925510f25580877ed2acf97c246ee80eb8f8.nq.gz
+│   ├── 5c06f00744a7709f5a5ac143dd516f1a1b239a6a.nq.gz
+│   ├── 6264db9358ae0f94bc44531958567c9d84a944b6.nq.gz
+│   ├── 68d59a0eadceece552d872c35093ead4a72daa1c.nq.gz
+│   ├── 7416a190de612bdd532c010160c7218654941d74.nq.gz
+│   ├── 74515daa80325cb1cf964cfc586064e384b8c3cd.nq.gz
+│   ├── 76869237ee61f0ba32dcedc9ce9c116caea723d1.nq.gz
+│   ├── 8bbce0e2cf48adc7a3a21b5272add5ae21fa055f.nq.gz
+│   ├── 96248bf2b9fccbeb9ea2729249922068c8f383c9.nq.gz
+│   ├── 9b077c20c24dab072b45ea8b1553adc018b84acf.nq.gz
+│   ├── 9d682df845e2478444e9ccaa52dd4d0943939c13.nq.gz
+│   ├── a27e066d9b6abd3c6893bf20d45c8a73bda3f75d.nq.gz
+│   ├── a753a3da7ebf5979c906dfc42cf56b2de7617942.nq.gz
+│   ├── aaa77dfac05514ef07b43bba207a565495e6175a.nq.gz
+│   ├── b2443c8d584a7a0fb2c3315f6191afce9587458d.nq.gz
+│   ├── c0e3b8ffa405f40ba681fc1ae5fc793ce19a0cec.nq.gz
+│   ├── c1519ca4b447a6b7f7725d9361d95bcea967cbc3.nq.gz
+│   ├── c64b671215db5a494e7059ec5f9a204a416809fa.nq.gz
+│   ├── ca2bd48a3fa98ecbbd74c62d2feaa35bdd37fc01.nq.gz
+│   ├── cff1d12d79755cf8eadbea65cf9242be704074ac.nq.gz
+│   ├── d6b6b8be399d2925b6f51e762d8d9cd3dd0f8103.nq.gz
+│   ├── db35b764297ec14447e059ef74969f0d115f77db.nq.gz
+│   ├── e8177e8783c9c4c3125bb89ccf4232ac5208f230.nq.gz
+│   ├── ef84a5786144af84276d7dc597fddcc7bd5afd5b.nq.gz
+│   └── f4315c7931904f000eb2e9a4c30ab2b247728339.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── a018ae3208ef3289cae9aa024947e0bb3b71d3ff.nq.gz
+└── tag
+    └── tag.nq.gz
+
+11 directories, 49 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[apple/ml-aim](https://github.com/apple/ml-aim)
+
+---
+*Parsed on 2026-11-06 by [repolex](https://repolex.ai)*
